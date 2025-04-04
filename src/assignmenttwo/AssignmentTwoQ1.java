@@ -2,9 +2,9 @@ package assignmenttwo;
 import javax.swing.*;
 import java.awt.*;
 
-public class AssignmentTwo {
+public class AssignmentTwoQ1 {
      //Constructor
-    AssignmentTwo(){
+    AssignmentTwoQ1(){
     JTextField user,pass;
     JButton login , register;
     
@@ -49,6 +49,6 @@ public class AssignmentTwo {
     logFrame.add(register);  
     }
     public static void main(String[] args) {
-       AssignmentTwo a = new AssignmentTwo();
+       AssignmentTwoQ1 a = new AssignmentTwoQ1();
     } 
 }
