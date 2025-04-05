@@ -1,4 +1,10 @@
 package assignmenttwo;
+/*
+Name: Goutam Powar
+Roll No: 23EC26
+Dept: Se ECOMP
+*/
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -49,6 +55,6 @@ public class AssignmentTwoQ1 {
     logFrame.add(register);  
     }
     public static void main(String[] args) {
-       AssignmentTwoQ1 a = new AssignmentTwoQ1();
+       AssignmentTwoQ1 oggyobj = new AssignmentTwoQ1();
     } 
 }

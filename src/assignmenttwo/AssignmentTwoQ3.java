@@ -1,13 +1,21 @@
 package assignmenttwo;
+/*
+Name: Goutam Powar
+Roll No: 23EC26
+Dept: Se ECOMP
+*/
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class AssignmentTwoQ3 {
-    
-    JTextField nameTF,passTF;
+public class AssignmentTwoQ3 implements ActionListener {
+    //Global Declaration
+    JTextField nameTF;
+    JPasswordField passTF;
     JButton submitB;
+    JLabel messg;
+    
     AssignmentTwoQ3(){
     JFrame tabf = new JFrame("User Input Tabs");
      tabf.setVisible(true);
@@ -28,29 +36,40 @@ public class AssignmentTwoQ3 {
     name.setFont(new Font("Raleway",Font.BOLD,14));
     p2.add(name);
     nameTF = new JTextField();
-    nameTF.setBounds( 130, 40, 200, 30);
+    nameTF.setBounds( 145, 40, 200, 30);
     p2.add(nameTF);
     
     JLabel pass = new JLabel("Password:");
-    pass.setBounds(30, 90, 80, 30);
+    pass.setBounds(30, 100, 80, 30);
     pass.setFont(new Font("Raleway",Font.BOLD,14));
     p2.add(pass);
-    passTF = new JTextField();
-    passTF.setBounds(130, 90, 200, 30);
+    passTF = new JPasswordField();
+    passTF.setBounds(145, 100, 200, 30);
     p2.add(passTF);
+    
+    JLabel collg = new JLabel("Select College:");
+    collg.setBounds(30, 160, 140, 30);
+    collg.setFont(new Font("Raleway",Font.BOLD,14));
+    p2.add(collg);
+    
+    String[] Colleges = {"PCCE" , "GEC", "DBCE", "RIT", "BITS","IIT", "NIT"};
+    JList<String> collegeList = new JList<>(Colleges);
+    collegeList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    
+    JScrollPane scrollpane = new JScrollPane(collegeList);
+    scrollpane.setBounds(145, 165, 110, 50);
+    p2.add(scrollpane);
     
     submitB = new JButton("Submit");
     submitB.setBackground(Color.white);
-    submitB.setBounds(30, 300, 100, 40);
+    submitB.setBounds(40, 280, 100, 40);
+    submitB.addActionListener(this);
     p2.add(submitB);
     
-    JLabel messg = new JLabel("fe");
-    messg.setBounds(30, 350, 150, 30);
+    //label for bottom text
+    messg = new JLabel("");
+    messg.setBounds(40, 330, 250, 30);
     p2.add(messg);
-    
-    
-    
-    
     
     JTabbedPane detailsTB = new JTabbedPane();
     detailsTB.setBounds(0, 0, 672, 408);
@@ -59,7 +78,25 @@ public class AssignmentTwoQ3 {
     tabf.add(detailsTB);
     }
     
-    public static void main(String args[]){
-        AssignmentTwoQ3 obj = new AssignmentTwoQ3();
+    public void actionPerformed(ActionEvent e)
+    {
+        String S1 = nameTF.getText();
+        String S2 = passTF.getText();
+        try{
+            if(e.getSource() == submitB && (S1.isEmpty() || S2.isEmpty()))
+            {
+            messg.setText("PLEASE ENTER ALL THE DETAILS...");
+            }else{
+                messg.setText("FORM SUBMITTED SUCCESFULLY...");
+            }      
+       }catch(Exception ae){
+            ae.printStackTrace();
+       }
+    
+    
     }
+    
+    public static void main(String args[]){
+        AssignmentTwoQ3 oggyobj = new AssignmentTwoQ3();
+  }
 }

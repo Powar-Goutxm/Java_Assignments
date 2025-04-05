@@ -1,4 +1,9 @@
 package assignmenttwo;
+/*
+Name: Goutam Powar
+Roll No: 23EC26
+Dept: Se ECOMP
+*/
 
 import javax.swing.*;
 import java.awt.*;
@@ -96,6 +101,6 @@ public class AssignmentTwoQ2 implements ActionListener{
     }
     
     public static void main(String args[]){
-    AssignmentTwoQ2 obj = new AssignmentTwoQ2();
+    AssignmentTwoQ2 oggyobj = new AssignmentTwoQ2();
     }
 }
